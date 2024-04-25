@@ -108,9 +108,13 @@ class Controller {
         }
     }
 
+ 
     static async editProduct(req, res) {
         try {
-            res.send("edit product buat seller")
+            const { ProductId } = req.params
+            const products = await Product.findByPk(ProductId)
+            const category = await Category.findByPk(products.CategoryId)
+            res.render('editProduct', { products, category })
         } catch (error) {
             res.send(error)
         }
@@ -118,7 +122,14 @@ class Controller {
 
     static async postEditProduct(req, res) {
         try {
-            res.send("post edit product")
+            let { 
+                name, description, price } = req.body
+                let { ProductId } = req.params;
+                Product.update({name, description, price }, 
+                    { where: { id: ProductId }})
+        
+                  res.redirect('/')
+            res.redirect(`/products/${ProductId}/edit`)
         } catch (error) {
             res.send(error)
         }
@@ -126,6 +137,11 @@ class Controller {
 
     static async deleteOrder(req, res) {
         try {
+            const { ProductId } = req.params
+
+            await Employee.destroy({
+              where: { ProductId }
+            })
             res.send("delete order di cart")
         } catch (error) {
             res.send(error)
