@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Product.hasMany(models.Orders, { foreignKey: "ProductId" })
+      Product.hasMany(models.Order, { foreignKey: "ProductId" })
       Product.belongsTo(models.Category, { foreignKey: "CategoryId" });
       Product.belongsTo(models.User, { foreignKey: "UserId" });
     }
@@ -34,6 +34,10 @@ module.exports = (sequelize, DataTypes) => {
     UserId: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    imgUrl: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   }, 
   {
