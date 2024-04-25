@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "username": "Joufando Anggol",
+        "email" : "joufando@gmail.com",
+        "password": "fandotajirmelintir",
+        "role": "seller"
+    },
+    {
+        "id": 2,
+        "username": "Petrus Arditama",
+        "email" : "petrustamvhan@gmail.com",
+        "password": "petrussanglegenda",
+        "role": "buyer"
+    },
+    {
+        "id": 3,
+        "username": "Gal Gadot",
+        "email" : "galgadot@gmail.com",
+        "password": "akusimpenanfando",
+        "role": "buyer"
+    }
+]
