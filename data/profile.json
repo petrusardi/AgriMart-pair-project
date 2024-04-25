@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "UserId": 1,
+        "email" : "joufando@gmail.com",
+        "address": "jl. kartika utama, no, 14, pondok indah, jakarta selatan"
+    },
+    {
+        "id": 2,
+        "UserId": 2,
+        "email" : "petrustamvhan@gmail.com",
+        "address": "jl. taman golf, no, 66, karawaci, tangerang"
+    },
+    {
+        "id": 3,
+        "UserId": 3,
+        "email" : "galgadot@gmail.com",
+        "address": "jl. kartika utama, no, 15, pondok indah, jakarta selatan"
+    }
+]
