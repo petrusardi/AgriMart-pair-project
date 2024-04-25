@@ -14,6 +14,19 @@ module.exports = (sequelize, DataTypes) => {
       Product.belongsTo(models.Category, { foreignKey: "CategoryId" });
       Product.belongsTo(models.User, { foreignKey: "UserId" });
     }
+
+    static async getCategory (Category, option) {
+      try {
+        let options = {
+          include: Category
+        }
+        let data = await Product.findAll(options)
+        return data
+      } catch (error) {
+        throw error
+      }
+    }
+
   }
 
   Product.init({
@@ -36,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     imgUrl: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     }
   }, 
