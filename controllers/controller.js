@@ -13,7 +13,7 @@ class Controller {
 
     static async register(req, res) {
         try {
-            res.send("ini regist users")
+            res.render("register")
         } catch (error) {
             res.send(error)
         }
@@ -28,6 +28,14 @@ class Controller {
     }
 
     static async login(req, res) {
+        try {
+            res.render("login")
+        } catch (error) {
+            res.send(error)
+        }
+    }
+
+    static async cekPassword(req, res) {
         try {
             res.send("ini login")
         } catch (error) {
