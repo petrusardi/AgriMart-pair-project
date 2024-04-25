@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "name": "Kelapa",
+        "description" : "Kelapa adalah buah kehidupan",
+        "price": 2000,
+        "CategoryId": 3,
+        "UserId": 3,
+        "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd1vdMkLIEZhEJpp9JGGCGJ24qIeFhKKKHPw&s",
+        "quantity": 1
+    },
+    {
+        "id": 2,
+        "name": "Kemiri Bulat",
+        "description" : "Kemiri siap pakai untuk kebutuhan dapur",
+        "price": 40000,
+        "CategoryId": 3,
+        "UserId": 2,
+        "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzgdC4pH2RNyyd6eWze2EnW2AjxfkFeTEFSA&s",
+        "quantity": 1
+    },
+    {
+        "id": 3,
+        "name": "Biji Pala",
+        "description" : "Dapat di gunakan menjadi obat maupun bahan baku kebutuhan medis",
+        "price": 220000,
+        "CategoryId": 3,
+        "UserId": 1,
+        "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqg4bYnHUUDXaZfstcSfhUJuO1A8hyVpOt0w&s",
+        "quantity": 1
+
+    },
+    {
+        "id": 4,
+        "name": "Matoa",
+        "description" : "Buah khas dari sulawesi uatara",
+        "price": "160000",
+        "CategoryId": 2,
+        "UserId": 2,
+        "imgUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaI8GJWfnJC0D9CYBrQtTxXc1k6UDcGqs6lg&s",
+        "quantity": 1
+    },
+    {
+        "id": 5,
+        "name": "Langsat",
+        "description" : "Mirip duku, tetapi tidak terlalu asam dan mempunyai tekstur yang kenyal",
+        "price": 15000,
+        "CategoryId": 2,
+        "UserId": 1,
+        "imgUrl":"https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/741/2024/02/28/Screenshot_2406-1811336980.png",
+        "quantity": 1
+    },
+    {
+        "id": 6,
+        "name": "Pisang Goroho",
+        "description" : "Pisang khas dari sulawesi uatara, biasa di makan menggunakan dabu-dabu",
+        "price": 50000,
+        "CategoryId": 2,
+        "UserId": 2,
+        "imgUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoKHl4myR7sWxZYGe1UxDQuRS8eF-cq0kiQw&s",
+        "quantity": 1
+    },
+    {
+        "id": 7,
+        "name": "Daun Gedi",
+        "description" : "Sayur khas sulawesi utara, lebih populer dengan nama daun pepaya jepang",
+        "price": 23000,
+        "CategoryId": 1,
+        "UserId": 3,
+        "imgUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqLCyW8PjyeRj0F23X4Zmisq9utppmnM_-hQ&s",
+        "quantity": 1
+    },
+    {
+        "id": 8,
+        "name": "Sayur Paku",
+        "description" : "Sayur khas dari sulawesi uatara, lebih populer dengan nama sayur pakis",
+        "price": 25000,
+        "CategoryId": 2,
+        "UserId": 1,
+        "imgUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiZ7P4lsIjsZUg0r4yWUuJsrFW298gl0IMnA&s",
+        "quantity": 1
+    },
+    {
+        "id": 9,
+        "name": "Cabai Rawit",
+        "description" : "Cabai Rawit asli manado, yang sudah terkenal untuk pembuatan dabu-dabu",
+        "price": 80000,
+        "CategoryId": 2,
+        "UserId": 2,
+        "imgUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAP55v7aoIdAI5xRqWpWswy_0ok4gr2ke5rQ&s",
+        "quantity": 1
+    }
+]

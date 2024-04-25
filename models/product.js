@@ -51,6 +51,10 @@ module.exports = (sequelize, DataTypes) => {
     imgUrl: {
       type: DataTypes.TEXT,
       allowNull: false
+    },
+    quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   }, 
   {
