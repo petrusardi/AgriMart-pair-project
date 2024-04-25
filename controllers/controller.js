@@ -1,11 +1,24 @@
+const {Product,Category, User} = require("../models")
+const bcrypt = require('bcryptjs')
 // const {  } = require("../models")
 // const { Op } = require("sequelize")
 // const { } = require("../helper")
 
 class Controller {
+    static async landing(req, res) {
+        try {
+            res.render("landingpage")
+            // res.send(data)
+        } catch (error) {
+            res.send(error)
+        }
+    }
+
     static async showAll(req, res) {
         try {
-            res.send("ini home")
+            let data = await Product.getCategory(Category)
+            res.render("homepage",{data})
+            // res.send(data)
         } catch (error) {
             res.send(error)
         }
@@ -21,7 +34,9 @@ class Controller {
 
     static async postRegister(req, res) {
         try {
-            res.send("ini post regist users")
+            const {username,email, password, role} = req.body
+            await User.create({username,email, password, role})
+            res.redirect('/login')
         } catch (error) {
             res.send(error)
         }
@@ -29,18 +44,33 @@ class Controller {
 
     static async login(req, res) {
         try {
-            res.render("login")
+            const {error} = req.query
+            res.render('login', {error})
         } catch (error) {
             res.send(error)
         }
     }
 
-    static async cekPassword(req, res) {
-        try {
-            res.send("ini login")
-        } catch (error) {
-            res.send(error)
-        }
+    static postLogin(req, res) {
+        const {email,password} = req.body
+        User.findOne({where: {email}})
+        .then (user => {
+            if (user) {
+                const isValidPassword = bcrypt.compareSync(password, user.password)
+
+                if (isValidPassword) {
+                    req.session.userId = user.id
+                    return res.redirect('/home')
+                } else {
+                    const error = "invalid email/password"
+                    return res.redirect(`/login?error=${error}`)
+                }
+            } else {
+                const error = "invalid email/password"
+                return res.redirect(`login?error=${error}`)
+            }
+        })
+        .catch(err => res.send(err))
     }
 
     static async getOrders(req, res) {
@@ -61,7 +91,10 @@ class Controller {
 
     static async detailProduct(req, res) {
         try {
-            res.send("ini detail Product")
+            let { ProductId:id } = req.params
+            let data = await Product.findByPk(+id)
+            let cat = await Category.findByPk(data.CategoryId)
+            res.render("detail-product",{data, cat})
         } catch (error) {
             res.send(error)
         }
