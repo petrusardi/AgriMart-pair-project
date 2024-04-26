@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ADD USER</title>
+    <%- include('_navbar') %>
+    <%- include('_css') %>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Add User</h1>
+
+      <form action="/products/add" method="POST">
+        <div class="mb-3">
+           <label class="form-label">Name</label>
+           <input type="text" class="form-control no-border" name="name"/>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Category</label>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            name="CategoryId"
+          >
+            <option value = "">Choose...</option>
+            <% data.forEach((item) => { %>
+            <option value=<%= item.id  %>><%= item.name %></option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input type="number" class="form-control no-border" name="price"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Image Url</label>
+            <input type="text" class="form-control no-border" name="imgUrl"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <input type="text" class="form-control no-border" name="description"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -14,6 +14,19 @@ module.exports = (sequelize, DataTypes) => {
       Order.belongsTo(models.Product, { foreignKey: "ProductId" })
       Order.belongsTo(models.Profile, { foreignKey: "CustomerId" })
     }
+
+    static async getProd (Product, option) {
+      try {
+        let options = {
+          include: Product,
+          where: option
+        }
+        let data = await Order.findAll(options)
+        return data
+      } catch (error) {
+        throw error
+      }
+    }
   }
   Order.init({
   
@@ -22,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       references: {
         model: {
-          tableName: "Customers"
+          tableName: "Profiles"
         },
         key: "id"
       },

@@ -18,7 +18,8 @@ module.exports = (sequelize, DataTypes) => {
     static async getCategory (Category, option) {
       try {
         let options = {
-          include: Category
+          include: Category,
+          where:option
         }
         let data = await Product.findAll(options)
         return data

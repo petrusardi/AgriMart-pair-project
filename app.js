@@ -27,15 +27,24 @@ app.use(session({
   app.post("/register", Controller.postRegister);
   app.get("/login", Controller.login);
   app.post("/login", Controller.postLogin);
+  app.get('/logout', Controller.getLogout);
+
 
   app.use((req, res, next) => {
-    console.log(req.session);
-      console.log('Time:', Date.now())
-      next()
+    // console.log(req.session);
+    if (!req.session.userId) {
+        const error = 'yuk login dulu!';
+        res.redirect(`/login?error=${error}`)
+    } else {
+        next()
+    }
     })
+
+app.get("/cart", Controller.buyOrders);
 app.get("/home", Controller.showAll);
-app.get("/cart", Controller.getOrders);
-app.post("/cart", Controller.buyOrders);
+app.get("/products/add", Controller.addProduct);
+app.post("/products/add", Controller.postAddProduct);
+app.get("/cart/:ProductId", Controller.getOrders);
 app.get("/products/:ProductId", Controller.detailProduct);
 app.post("/products/:ProductId", Controller.getProduct);
 app.get("/products/:ProductId/edit", Controller.editProduct);
